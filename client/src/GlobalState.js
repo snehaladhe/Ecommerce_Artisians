@@ -17,10 +17,5 @@ export const DataProvider = ({ children }) => {
         {children}
     </GlobalState.Provider>)
     
-    // ProductsAPI()
-    // return (
-    //     <GlobalState.Provider value={"value in Global"}>
-    //         {children}
-    //         </GlobalState.Provider>
-    // )
+    
 }
