@@ -12,7 +12,7 @@ function Register() {
   const onChangeInput = (e) => {
     const { name, value } = e.target;
     setUser({ ...user, [name]: value });
-  };
+    };
 
   const registerSubmit = async (e) => {
     e.preventDefault();
