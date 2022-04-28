@@ -120,7 +120,7 @@ const userCtrl = {
       });
     }
   },
-  addCarrt: async (req, res) => {
+  addCart: async (req, res) => {
     try {
       const user = await Users.findById(req.user.id)
       if(!user) return res.status(400).json({msg:"user does not exist"})
