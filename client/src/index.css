@@ -49,3 +49,9 @@ button {
 
 /*------------------Cart----------------*/
 @import url("./components/mainpages/cart/cart.css");
+
+/*------------------Category----------------*/
+@import url("./components/mainpages/categories/category.css");
+
+/*-------------------CreateProduct---------*/
+@import url("./components/mainpages/createProduct/createProduct.css");

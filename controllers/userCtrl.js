@@ -122,31 +122,32 @@ const userCtrl = {
   },
   addCart: async (req, res) => {
     try {
-      const user = await Users.findById(req.user.id)
-      if(!user) return res.status(400).json({msg:"user does not exist"})
-      await Users.findOneAndUpdate({ _id: req.user.id }, {
-        cart: req.body.cart
-      })
-      return res.josn({msg:"Added to cart"})
+      const user = await Users.findById(req.user.id);
+      if (!user) return res.status(400).json({ msg: "user does not exist" });
+      await Users.findOneAndUpdate(
+        { _id: req.user.id },
+        {
+          cart: req.body.cart,
+        }
+      );
+      return res.josn({ msg: "Added to cart" });
     } catch (err) {
       return res.status(500).json({
         msg: err.message,
       });
-      
     }
-  }
-
+  },
 };
 
 const createAccessToken = (user) => {
   return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, {
-    expiresIn: "1d",
+    expiresIn: "15s",
   });
 };
 
 const createRefreshToken = (user) => {
   return jwt.sign(user, process.env.REFRESH_TOKEN_SECRET, {
-    expiresIn: "7d",
+    expiresIn: "1d",
   });
 };
 
