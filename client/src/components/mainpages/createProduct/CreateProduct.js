@@ -61,7 +61,7 @@ function CreateProduct() {
         </div>
         <div className="row">
           <label htmlFor="description">Description</label>
-          <input
+          <textarea
             type="text"
             name="description"
             id="description"
