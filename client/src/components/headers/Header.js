@@ -35,7 +35,7 @@ function Header() {
     return (
       <>
         <li>
-          <Link to="/history">History</Link>
+          <Link to="/history">Feedback</Link>
         </li>
         <li>
           <Link to="/" onClick={logoutUser}>
