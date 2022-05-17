@@ -35,7 +35,7 @@ function Header() {
     return (
       <>
         <li>
-          <Link to="/history">History</Link>
+          <Link to="/history">Feedback</Link>
         </li>
         <li>
           <Link to="/" onClick={logoutUser}>
@@ -53,7 +53,7 @@ function Header() {
       </div>
       <div className="logo">
         <h1>
-          <Link to="/">{isAdmin ? "Admin" : "ECOMMERCE_ARTISIANS"}</Link>
+          <Link to="/">{isAdmin ? "Seller" : "ECOMMERCE_ARTISIANS"}</Link>
         </h1>
       </div>
       <ul>

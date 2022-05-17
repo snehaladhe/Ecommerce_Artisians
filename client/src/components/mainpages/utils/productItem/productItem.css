@@ -50,11 +50,11 @@
   padding: 6px;
 }
 #btn_buy {
-  background: #555;
+  background: #6b8e23;
   margin-right: 5px;
 }
 #btn_view {
-  background: teal;
+  background: #cd5c5c;
   margin-left: 5px;
 }
 .product_card input {

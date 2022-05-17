@@ -28,7 +28,7 @@
   top: 0;
   left: 0;
   background: white;
-  color: rgb(250, 200, 107);
+  color: rgb(3, 118, 20);
   font-size: 17rem;
   text-align: center;
   cursor: pointer;
@@ -80,7 +80,7 @@ textarea {
 .create_product form button {
   width: 200px;
   height: 40px;
-  background: #555;
+  background: #ff6347;
   color: white;
   text-transform: uppercase;
   letter-spacing: 2px;
