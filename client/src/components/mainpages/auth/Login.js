@@ -25,33 +25,35 @@ function Login() {
   };
 
   return (
-    <div className="login-page">
-      <form onSubmit={loginSubmit}>
-        <h2>Login</h2>
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="Email"
-          value={user.email}
-          onChange={onChangeInput}
-        />
+    <div className="footer-fix">
+      <div className="login-page">
+        <form onSubmit={loginSubmit}>
+          <h2>Login</h2>
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Email"
+            value={user.email}
+            onChange={onChangeInput}
+          />
 
-        <input
-          type="password"
-          name="password"
-          required
-          autoComplete="on"
-          placeholder="Password"
-          value={user.password}
-          onChange={onChangeInput}
-        />
+          <input
+            type="password"
+            name="password"
+            required
+            autoComplete="on"
+            placeholder="Password"
+            value={user.password}
+            onChange={onChangeInput}
+          />
 
-        <div className="row">
-          <button type="submit">Login</button>
-          <Link to="/register">Register</Link>
-        </div>
-      </form>
+          <div className="row">
+            <button type="submit">Login</button>
+            <Link to="/register">Register</Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }

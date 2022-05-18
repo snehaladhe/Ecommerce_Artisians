@@ -132,7 +132,7 @@ function CreateProduct() {
   };
 
   return (
-    <div className="create_product">
+    <div className="create_product footer">
       <div className="upload">
         <input type="file" name="file" id="file_up" onChange={handleUpload} />
         {loading ? (

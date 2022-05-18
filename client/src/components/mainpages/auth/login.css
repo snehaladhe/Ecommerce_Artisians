@@ -5,6 +5,10 @@
   padding: 30px;
   margin: 50px auto;
 }
+.footer-fix {
+  margin-top: 180px;
+  margin-bottom: 205px;
+}
 .login-page h2 {
   text-transform: uppercase;
   letter-spacing: 2px;
