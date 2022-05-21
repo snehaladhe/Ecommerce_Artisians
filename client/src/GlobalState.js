@@ -4,6 +4,7 @@ import UserAPI from "./api/UserAPI";
 import axios from "axios";
 import Categories from "./api/CategoriesAPI";
 import CategoriesAPI from "./api/CategoriesAPI";
+import GetFeedback from "./components/mainpages/feedback/GetFeedback";
 
 export const GlobalState = createContext();
 
@@ -28,6 +29,8 @@ export const DataProvider = ({ children }) => {
     productsAPI: ProductsAPI(),
     userAPI: UserAPI(token),
     categoriesAPI: CategoriesAPI(),
+    GetFeedback: GetFeedback(),
   };
+
   return <GlobalState.Provider value={state}>{children}</GlobalState.Provider>;
 };

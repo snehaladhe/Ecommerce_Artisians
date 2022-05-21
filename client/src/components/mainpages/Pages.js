@@ -9,6 +9,8 @@ import NotFound from "./utils/not_found/NotFound";
 import Categories from "./categories/Categories";
 import CreateProduct from "./createProduct/CreateProduct";
 import { GlobalState } from "../../GlobalState";
+import Feedback from "./feedback/Feedback";
+import Fetchfeedback from "./feedback/Fetchfeedback";
 
 function Pages() {
   const state = useContext(GlobalState);
@@ -30,10 +32,16 @@ function Pages() {
         exact
         component={isAdmin ? CreateProduct : Login}
       />
-       <Route
+      <Route
         path="/edit_product/:id"
         exact
         component={isAdmin ? CreateProduct : Login}
+      />
+
+      <Route
+        path="/feedback"
+        exact
+        component={isAdmin ? Fetchfeedback : Feedback}
       />
       <Route path="/cart" exact component={Cart} />
       <Route path="*" exact component={NotFound} />

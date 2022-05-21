@@ -55,3 +55,6 @@ button {
 
 /*-------------------CreateProduct---------*/
 @import url("./components/mainpages/createProduct/createProduct.css");
+
+/*-------------feedback css ------------*/
+@import url("./components/mainpages/feedback/feedback.css");

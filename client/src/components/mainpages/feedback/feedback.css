@@ -1,0 +1,13 @@
+table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 2px solid rgb(201, 78, 123);
+}
+
+th,
+td {
+  padding: 20px;
+}
