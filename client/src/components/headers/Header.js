@@ -61,8 +61,12 @@ function Header() {
       </div>
       <ul>
         <li>
-          <Link to="/">{isAdmin ? "Products" : "Shop"}</Link>
+          <Link to="/">Home</Link>
         </li>
+        <li>
+          <Link to="/products">{isAdmin ? "Products" : "Shop"}</Link>
+        </li>
+
         {isAdmin && adminRouter()}
         {isLogged ? (
           loggedRouter()
