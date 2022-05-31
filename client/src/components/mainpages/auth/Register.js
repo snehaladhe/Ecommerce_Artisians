@@ -7,6 +7,7 @@ function Register() {
     name: "",
     email: "",
     password: "",
+    phone: "",
   });
 
   const onChangeInput = (e) => {
@@ -57,6 +58,14 @@ function Register() {
             autoComplete="on"
             placeholder="Password"
             value={user.password}
+            onChange={onChangeInput}
+          />
+          <input
+            type="Number"
+            name="phone"
+            required
+            placeholder="Phone Number"
+            value={user.phone}
             onChange={onChangeInput}
           />
 

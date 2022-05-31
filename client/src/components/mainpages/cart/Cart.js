@@ -94,7 +94,7 @@ function Cart() {
       ))}
       <div className="total">
         <h3>Total:₹ {total}</h3>
-        <Link to="#!">Payment</Link>
+        <Link to="/email">Payment</Link>
       </div>
     </div>
   );

@@ -20,6 +20,7 @@ app.use("/fed", require("./routes/feedbackRouter"));
 app.use("/api", require("./routes/categoryRouter"));
 app.use("/api", require("./routes/upload"));
 app.use("/api", require("./routes/productRouter"));
+app.use("/api", require("./routes/mail"));
 
 const URI = process.env.MONGODB_URL;
 mongoose.connect(
@@ -38,5 +39,5 @@ mongoose.connect(
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log("sERVER is running on port", PORT);
+  console.log("SERVER is running on port", PORT);
 });

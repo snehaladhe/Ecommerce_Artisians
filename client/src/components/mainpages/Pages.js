@@ -12,6 +12,7 @@ import { GlobalState } from "../../GlobalState";
 import Feedback from "./feedback/Feedback";
 import Fetchfeedback from "./feedback/Fetchfeedback";
 import Slider from "./Slider";
+import Mail from "./cart/Mail";
 function Pages() {
   const state = useContext(GlobalState);
   const [isLogged] = state.userAPI.isLogged;
@@ -19,6 +20,7 @@ function Pages() {
   return (
     <Switch>
       <Route path="/" exact component={Slider} />
+      <Route path="/email" exact component={Mail} />
       <Route path="/products" exact component={Products} />
       <Route path="/detail/:id" exact component={DetailProduct} />
       <Route path="/login" exact component={isLogged ? NotFound : Login} />

@@ -1,12 +1,12 @@
 const Users = require("../models/userModel");
-
+const nodemailer = require("nodemailer");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const userCtrl = {
   register: async (req, res) => {
     try {
-      const { name, email, password } = req.body;
+      const { name, email, password, phone } = req.body;
       const user = await Users.findOne({
         email,
       });
@@ -14,13 +14,10 @@ const userCtrl = {
         return res.status(400).json({
           msg: "this mail already exists",
         });
+
       if (password.length < 6)
         return res.status(400).json({
-          msg: "password must be 6 charcters long",
-        });
-      if (password.length > 6)
-        return res.status(400).json({
-          msg: "password must be 6 characters long",
+          msg: "password must be greater than 6 characters long",
         });
 
       const passwordHash = await bcrypt.hash(password, 10);
@@ -28,6 +25,7 @@ const userCtrl = {
         name,
         email,
         password: passwordHash,
+        phone,
       });
 
       await newUser.save();
