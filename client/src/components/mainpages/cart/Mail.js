@@ -1,35 +1,47 @@
 import React, { useState } from "react";
-import { sendMail } from "./helper/Mail";
+//import { sendMail } from "./helper/Mail.js";
 
 const Mail = () => {
   const [values, setValues] = useState({
     email: "",
-    status: false,
+    // status: false,
   });
   const { email, status } = values;
   const handleChange = (name) => (event) => {
-    setValues({ ...values, [name]: event.target.value });
+    setValues({
+      ...values,
+      [name]: event.target.value,
+    });
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("email", email);
-    sendMail(email)
-      .then((data) => {
-        console.log("testing badly");
-        if (data.err) {
-          alert("err", data.err);
-        } else {
-          setValues({ ...values, status: true });
-          alert("SUCCESS!!!!!!!!!!!", data);
-        }
-      })
-      .catch(console.log("err in sending mail"));
+
+    const res = await fetch("/api/email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email,
+      }),
+    });
+    const store = await res.json();
+    if (res.status === 400 || !store) {
+      window.alert("invalid");
+    } else {
+      window.alert("Check Your Mail");
+    }
   };
   return (
-    <div style={{ marginTop: "200px", marginBottom: "248px" }}>
+    <div
+      style={{
+        marginTop: "200px",
+        marginBottom: "248px",
+      }}
+    >
       <div className="login-page">
-        <form onSubmit={handleSubmit}>
-          <h2>Confirm Your Email</h2>
+        <form method="POST">
+          <h2> Confirm Your Email </h2>
           <input
             id="email"
             type="text"
@@ -39,18 +51,20 @@ const Mail = () => {
             value={email}
             onChange={handleChange("email")}
           />
-
           <div className="row">
-            <button type="submit">pay</button>
+            <button type="submit" onClick={handleSubmit}>
+              {" "}
+              pay{" "}
+            </button>
           </div>
         </form>
-        {status ? (
+        {/* {status ? (
           <div>
-            <h1>message send successfully</h1>
+            <h1> message send successfully </h1>
           </div>
         ) : (
-          <div></div>
-        )}
+          <div> </div>
+        )} */}
       </div>
     </div>
   );
