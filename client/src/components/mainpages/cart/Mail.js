@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 //import { sendMail } from "./helper/Mail.js";
+import { Link } from "react-router-dom";
 
 const Mail = () => {
   const [values, setValues] = useState({
     email: "",
-    // status: false,
   });
-  const { email, status } = values;
+  const { email } = values;
   const handleChange = (name) => (event) => {
     setValues({
       ...values,
@@ -53,18 +53,13 @@ const Mail = () => {
           />
           <div className="row">
             <button type="submit" onClick={handleSubmit}>
-              {" "}
-              pay{" "}
+              Send OTP
             </button>
           </div>
         </form>
-        {/* {status ? (
-          <div>
-            <h1> message send successfully </h1>
-          </div>
-        ) : (
-          <div> </div>
-        )} */}
+        <div className="row">
+          <Link to="/otpverify">OTP VERIFICATION</Link>
+        </div>
       </div>
     </div>
   );

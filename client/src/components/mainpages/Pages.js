@@ -13,6 +13,7 @@ import Feedback from "./feedback/Feedback";
 import Fetchfeedback from "./feedback/Fetchfeedback";
 import Slider from "./Slider";
 import Mail from "./cart/Mail";
+import Otpconfirm from "./cart/Otpconfirm";
 function Pages() {
   const state = useContext(GlobalState);
   const [isLogged] = state.userAPI.isLogged;
@@ -21,6 +22,7 @@ function Pages() {
     <Switch>
       <Route path="/" exact component={Slider} />
       <Route path="/email" exact component={Mail} />
+      <Route path="/otpverify" exact component={Otpconfirm} />
       <Route path="/products" exact component={Products} />
       <Route path="/detail/:id" exact component={DetailProduct} />
       <Route path="/login" exact component={isLogged ? NotFound : Login} />

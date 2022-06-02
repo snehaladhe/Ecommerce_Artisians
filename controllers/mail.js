@@ -10,9 +10,15 @@ exports.sendMail = (req, res) => {
       pass: process.env.PASSWORD,
     },
   });
-  const min = 1;
-  const max = 1000000;
-  const rand = min + Math.trunc(Math.random() * (max - min));
+  // const min = 1;
+  // const max = 1000000;
+  // const rand = min + Math.trunc(Math.random() * (max - min));
+  var array = [
+    893407, 920453, 467483, 326721, 127685, 674345, 976532, 182965, 564789,
+    756978,
+  ];
+  var index = Math.floor(Math.random() * 10);
+  var rand = array[index];
 
   var message = {
     from: process.env.EMAIL,
