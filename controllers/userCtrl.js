@@ -6,19 +6,23 @@ const jwt = require("jsonwebtoken");
 const userCtrl = {
   register: async (req, res) => {
     try {
-      const { name, email, password, phone } = req.body;
+      const { name, email, password, phone, address } = req.body;
       const user = await Users.findOne({
         email,
       });
+
       if (user)
         return res.status(400).json({
           msg: "this mail already exists",
         });
 
-      if (password.length < 6)
+      if (
+        !/^[a-z0-9](\.?[a-z0-9]){3,}@[Gg][Mm][Aa][Ii][Ll]\.com$/i.test(email)
+      ) {
         return res.status(400).json({
-          msg: "password must be greater than 6 characters long",
+          msg: "you have entered wrong email",
         });
+      }
 
       const passwordHash = await bcrypt.hash(password, 10);
       const newUser = new Users({
@@ -26,6 +30,7 @@ const userCtrl = {
         email,
         password: passwordHash,
         phone,
+        address,
       });
 
       await newUser.save();
