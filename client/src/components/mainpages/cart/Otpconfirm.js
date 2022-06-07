@@ -24,6 +24,9 @@ const Otpconfirm = () => {
       "182965",
       "564789",
       "756978",
+      "893560",
+      "484357",
+      "794360",
     ];
     var entrotp = values.otp;
     console.log(entrotp);
