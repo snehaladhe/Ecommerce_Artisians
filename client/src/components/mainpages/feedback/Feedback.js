@@ -58,7 +58,7 @@ function Feedback() {
           />
 
           <textarea
-            style={{ borderColor: "rgb(3, 165, 206)", marginTop: "12px" }}
+            style={{ borderColor: "#228b22", marginTop: "12px" }}
             name="feedback"
             required
             placeholder="feedback"

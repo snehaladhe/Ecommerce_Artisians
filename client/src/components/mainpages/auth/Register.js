@@ -73,7 +73,7 @@ function Register() {
             onChange={onChangeInput}
           />
           <textarea
-            style={{ border: "1px solid rgb(3, 165, 206)", marginTop: "10px" }}
+            style={{ border: "1px solid #228b22", marginTop: "10px" }}
             name="address"
             placeholder="Enter Your Address"
             required

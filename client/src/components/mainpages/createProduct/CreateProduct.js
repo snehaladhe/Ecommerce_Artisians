@@ -184,6 +184,7 @@ function CreateProduct() {
         <div className="row">
           <label htmlFor="description">Description</label>
           <textarea
+            style={{ border: " 2px solid #228b22" }}
             type="text"
             name="description"
             id="description"
@@ -196,6 +197,7 @@ function CreateProduct() {
         <div className="row">
           <label htmlFor="content">Seller Information</label>
           <textarea
+            style={{ border: " 2px solid #228b22" }}
             type="text"
             name="content"
             id="content"
