@@ -4,7 +4,7 @@ table {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  border: 2px solid rgb(201, 78, 123);
+  border: 2px solid #228b22;
 }
 
 th,

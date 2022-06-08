@@ -8,6 +8,7 @@ function Register() {
     email: "",
     password: "",
     phone: "",
+    address: "",
   });
 
   const onChangeInput = (e) => {
@@ -29,13 +30,14 @@ function Register() {
   };
 
   return (
-    <div className="footer-fix">
+    <div className="footer-f">
       <div className="login-page">
         <form onSubmit={registerSubmit}>
           <h2>Register</h2>
           <input
             type="text"
             name="name"
+            pattern="[a-zA-Z][a-zA-Z ]{2,}"
             required
             placeholder="Name"
             value={user.name}
@@ -54,6 +56,7 @@ function Register() {
           <input
             type="password"
             name="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}"
             required
             autoComplete="on"
             placeholder="Password"
@@ -61,11 +64,20 @@ function Register() {
             onChange={onChangeInput}
           />
           <input
-            type="Number"
+            type="phone"
             name="phone"
+            pattern="^[7-9][0-9]{9}$"
             required
-            placeholder="Phone Number"
+            placeholder="phone"
             value={user.phone}
+            onChange={onChangeInput}
+          />
+          <textarea
+            style={{ border: "1px solid #228b22", marginTop: "10px" }}
+            name="address"
+            placeholder="Enter Your Address"
+            required
+            value={user.address}
             onChange={onChangeInput}
           />
 

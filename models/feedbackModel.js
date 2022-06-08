@@ -4,26 +4,18 @@ const feedbackSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      trim: true,
-      unique: true,
     },
     sellerinfo: {
       type: String,
       required: true,
-      trim: true,
-      unique: true,
     },
     productId: {
       type: String,
       required: true,
-      trim: true,
-      unique: true,
     },
     feedback: {
       type: String,
       required: true,
-      trim: true,
-      unique: true,
     },
   },
   {

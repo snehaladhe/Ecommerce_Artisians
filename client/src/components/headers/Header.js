@@ -11,6 +11,7 @@ function Header() {
   const [isLogged] = state.userAPI.isLogged;
   const [isAdmin] = state.userAPI.isAdmin;
   const [cart] = state.userAPI.cart;
+  const [menu, setMenu] = useState(false);
 
   const logoutUser = async () => {
     await axios.get("/user/logout");
@@ -48,18 +49,22 @@ function Header() {
       </>
     );
   };
+  const toggleMenu = () => setMenu(!menu);
+  const styleMenu = {
+    left: menu ? 0 : "-100%",
+  };
 
   return (
     <header>
-      <div className="menu">
+      <div className="menu" onClick={() => setMenu(!menu)}>
         <img src={Menu} alt="menu" width={"30"} />
       </div>
       <div className="logo">
         <h1>
-          <Link to="/">{isAdmin ? "Admin" : "ECOMMERCE_ARTISIANS"}</Link>
+          <Link to="/">{isAdmin ? "Admin" : "🛍️eco-@rt"}</Link>
         </h1>
       </div>
-      <ul>
+      <ul style={styleMenu}>
         <li>
           <Link to="/">Home</Link>
         </li>
@@ -76,7 +81,7 @@ function Header() {
           </li>
         )}
 
-        <li>
+        <li onClick={() => setMenu(!menu)}>
           <img src={close} alt="close" width="30" className="menu" />
         </li>
       </ul>
