@@ -26,10 +26,14 @@ const Mail = () => {
       }),
     });
     const store = await res.json();
-    if (res.status === 400 || !store) {
+    if (!/^[a-z0-9](\.?[a-z0-9]){3,}@[Gg][Mm][Aa][Ii][Ll]\.com$/i.test(email)) {
+      return res.status(400).json({
+        msg: "you have entered wrong email",
+      });
+    } else if (res.status === 400 || !store) {
       window.alert("invalid");
     } else {
-      window.alert("Check Your Mail");
+      window.alert("Mail Sent Successfully");
     }
   };
   return (
@@ -46,6 +50,7 @@ const Mail = () => {
             id="email"
             type="text"
             name="email"
+            pattern="/^[a-z0-9](\.?[a-z0-9]){3,}@[Gg][Mm][Aa][Ii][Ll]\.com$/"
             required
             placeholder="Email"
             value={email}

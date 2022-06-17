@@ -5,6 +5,7 @@ exports.sendMail = (req, res) => {
 
   let transporter = nodeMailer.createTransport({
     service: "gmail",
+
     auth: {
       user: process.env.EMAIL,
       pass: process.env.PASSWORD,
@@ -23,6 +24,7 @@ exports.sendMail = (req, res) => {
   var message = {
     from: process.env.EMAIL,
     to: Email,
+
     subject: "ORDER CONFIRMATION FROM ECOMMERCE-ARTISIANS",
     text: `YOUR ORDER HAS BEEN PLACED CONFIRM YOUR OTP ${rand}`,
   };

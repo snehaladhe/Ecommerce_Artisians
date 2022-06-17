@@ -16,7 +16,9 @@ const Slider = () => {
       <Carousel>
         <div>
           <img src={slider1} />
-          <p className="legend">ZERO DEFECT.!! ZERO EFFECT.....</p>
+          <p className="legend">
+            QUALITY IS REMEMBERED LONG AFTER THE PRICE IS FORGOTTEN!!!!!
+          </p>
         </div>
         <div>
           <img src={slider2} />
@@ -28,9 +30,7 @@ const Slider = () => {
         </div>
         <div>
           <img src={slider4} />
-          <p className="legend">
-            QUALITY IS REMEMBERED LONG AFTER THE PRICE IS FORGOTTEN!!!!!
-          </p>
+          <p className="legend">ZERO DEFECT.!! ZERO EFFECT.....</p>
         </div>
         <div>
           <img src={slider6} />

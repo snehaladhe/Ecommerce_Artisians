@@ -28,7 +28,7 @@ function Feedback() {
   return (
     <div style={{ marginBottom: "174px", marginTop: "100px" }}>
       <div className="login-page">
-        <form onSubmit={feedbackSubmit}>
+        <form method="POST">
           <h2>Feedback Form</h2>
           <input
             type="text"
@@ -67,7 +67,9 @@ function Feedback() {
           />
 
           <div className="row">
-            <button type="submit">Submit</button>
+            <button type="submit" onClick={feedbackSubmit}>
+              Submit
+            </button>
           </div>
         </form>
       </div>

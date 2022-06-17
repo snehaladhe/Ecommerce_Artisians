@@ -117,6 +117,7 @@ function CreateProduct() {
             headers: { Authorization: token },
           }
         );
+        alert("Product Added Successfully");
       }
 
       setCallback(!callback);
